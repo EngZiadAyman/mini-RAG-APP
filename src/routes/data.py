@@ -32,11 +32,12 @@ async def upload_data(project_id: str,
     async with aiofiles.open(file_path, "wb") as F:
         while content := await file.read(app_settings.FILE_DEFAULT_CHUNK_SIZE):
             await F.write(content)
-    return JSONResponse(
-        status_code=status.HTTP_200_OK,
-        content={
-            "message": ResponseSignals.FILE_UPLOAD_SUCCESS.value,
-            "file_path": file_path
-            }
-        )
-    
+                
+        return JSONResponse(
+            status_code=status.HTTP_200_OK,
+            content={
+                "message": ResponseSignals.FILE_UPLOAD_SUCCESS.value,
+                "file_path": file_path
+                }
+            )
+        
