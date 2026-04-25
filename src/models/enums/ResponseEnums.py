@@ -1,13 +1,9 @@
 from enum import Enum
 
-class ResponseSignals(Enum):
-    SUCCESS = "success"
-    
-    FILE_VALIDATION_FAILED = "file_validation_failed"
-    FILE_VALIDATION_SUCCESS = "file_validation_success"
+class ResponseSignal(Enum):
+
+    FILE_VALIDATED_SUCCESS = "file_validate_successfully"
     FILE_TYPE_NOT_SUPPORTED = "file_type_not_supported"
     FILE_SIZE_EXCEEDED = "file_size_exceeded"
-    FILE_UPLOAD_FAILED = "file_upload_failed"
     FILE_UPLOAD_SUCCESS = "file_upload_success"
-
-    ERROR = "error"
+    FILE_UPLOAD_FAILED = "file_upload_failed"

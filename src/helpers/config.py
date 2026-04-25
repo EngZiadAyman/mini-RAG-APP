@@ -1,12 +1,12 @@
-from pydantic_settings import BaseSettings
-from typing import List
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
 
-    APP_NAME: str 
+    APP_NAME: str
     APP_VERSION: str
     OPENAI_API_KEY: str
-    FILE_ALLOWED_TYPES: List[str]
+
+    FILE_ALLOWED_TYPES: list
     FILE_MAX_SIZE: int
     FILE_DEFAULT_CHUNK_SIZE: int
 
