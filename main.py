@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from routes import base
 
-@app.get("/test")
-async def test():
-    return {"message": "Hello World"}
+app = FastAPI()
+app.include_router(base.router_app)
+
